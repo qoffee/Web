@@ -6,8 +6,9 @@ def wsgi_application(environ, start_response):
     headers = [
             ('Content-type', 'text/plain')
     ]
-    data = ''
-    for i in environ['QUERY_STRING'].split('&'):
-        data = data + line + '\n'
+    #data = ''
+    #for i in environ['QUERY_STRING'].split('&'):
+    #    data = data + line + '\n'
+    data = environ['QUERY_STRING'].replace('&', '\n')
     start_response(status, headers)
-    return [body]
+    return [data]
