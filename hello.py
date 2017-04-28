@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-def wsgi_application(environ, start_response):
+def wsgi_app(environ, start_response):
     #bisness-logic
     status = '200 OK'
     headers = [
